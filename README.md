@@ -16,7 +16,7 @@ Note that the model architecture is a little different from that of the original
 Download and unzip [data]() corpus to designated directories.
 
 If you want make your data (anyone you want), Download audiobook [here](http://sachnoiviet.com/trang-chu.html)
-Then follow the steps in data_generator.ipynb
+Then follow the steps in `data_generator.ipynb`
 
 Preprocess data
 
@@ -41,7 +41,7 @@ For example: restore model at step 200000 and specify the source speaker and tar
 ```
 python convert.py --resume_iters 200000 --src_spk p0 --trg_spk p7 --filename ./data/sontung/test/p0_691_63_2.wav
 ```
-Post-process: follow denoise.ipynb
+Post-process: follow `denoise.ipynb`
 
 Demo
 ```
