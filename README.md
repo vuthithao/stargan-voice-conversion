@@ -13,7 +13,7 @@ Note that the model architecture is a little different from that of the original
 # Usage
 ## Download Dataset
 
-Download and unzip [data]() corpus to designated directories.
+Download and unzip [data](https://drive.google.com/drive/folders/1kQE0rg-y2YLHSYaiwMqdEYoxZvrOLy0B?usp=sharing) corpus to designated directories.
 
 If you want make your data (anyone you want), Download audiobook [here](http://sachnoiviet.com/trang-chu.html)
 Then follow the steps in `data_generator.ipynb`
