@@ -122,6 +122,11 @@ def test(config):
             if [True, False][0]:
                 wav_cpsyn = world_speech_synthesis(f0=f0, coded_sp=coded_sp,
                                                    ap=ap, fs=sampling_rate, frame_period=frame_period)
+                # librosa.output.write_wav(join(config.convert_dir, str(config.resume_iters), f'cpsyn-{wav_name}'),
+                #                          wav_cpsyn, sampling_rate)
+                # remove noise
+                wav_cpsyn = smooth(wav_cpsyn, 5)
+                wav_cpsyn = np.array(wav_cpsyn, dtype="float32")
                 librosa.output.write_wav(join(config.convert_dir, str(config.resume_iters), f'cpsyn-{wav_name}'),
                                          wav_cpsyn, sampling_rate)
 
@@ -150,3 +155,4 @@ if __name__ == '__main__':
     if config.resume_iters is None:
         raise RuntimeError("Please specify the step number for resuming.")
     test(config)
+
