@@ -72,6 +72,12 @@ def load_wav(wavfile, sr=16000):
     return wav_padding(wav, sr=sr, frame_period=5, multiple=4)  # TODO
     # return wav
 
+def get_batch_test_data(filename):
+    # filename la file npy
+    batch_data = []
+    batch_data.append(filename)
+    return batch_data
+
 def smooth(y, box_pts):
     box = np.ones(box_pts)/box_pts
     y_smooth = np.convolve(y, box, mode='same')
@@ -119,16 +125,17 @@ def test(config):
             wav_id = wav_name.split('.')[0]
             librosa.output.write_wav(join(config.convert_dir, str(config.resume_iters),
                                           f'{wav_id}-vcto-{test_loader.trg_spk}.wav'), wav_transformed, sampling_rate)
+            # remove noise
+            wav_transformed = smooth(wav_transformed, 5)
+            wav_transformed = np.array(wav_transformed, dtype="float32")
+            librosa.output.write_wav(join(config.convert_dir, str(config.resume_iters),
+                                          f'final.{wav_id}-vcto-{test_loader.trg_spk}.wav'), wav_transformed, sampling_rate)
             if [True, False][0]:
                 wav_cpsyn = world_speech_synthesis(f0=f0, coded_sp=coded_sp,
                                                    ap=ap, fs=sampling_rate, frame_period=frame_period)
-                # librosa.output.write_wav(join(config.convert_dir, str(config.resume_iters), f'cpsyn-{wav_name}'),
-                #                          wav_cpsyn, sampling_rate)
-                # remove noise
-                wav_cpsyn = smooth(wav_cpsyn, 5)
-                wav_cpsyn = np.array(wav_cpsyn, dtype="float32")
                 librosa.output.write_wav(join(config.convert_dir, str(config.resume_iters), f'cpsyn-{wav_name}'),
                                          wav_cpsyn, sampling_rate)
+
 
 
 if __name__ == '__main__':

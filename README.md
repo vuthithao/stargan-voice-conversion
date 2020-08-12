@@ -10,10 +10,15 @@ Note that the model architecture is a little different from that of the original
 * librosa
 * tensorboardX and tensorboard
 
+or
+```
+conda env create -f environment.yml
+```
+
 # Usage
 ## Download Dataset
 
-Download and unzip [data](https://drive.google.com/drive/folders/1kQE0rg-y2YLHSYaiwMqdEYoxZvrOLy0B?usp=sharing) corpus to designated directories.
+Download and unzip [data and trained model](https://drive.google.com/drive/folders/1kQE0rg-y2YLHSYaiwMqdEYoxZvrOLy0B?usp=sharing) corpus to designated directories.
 
 If you want make your data (anyone you want), Download audiobook [here](http://sachnoiviet.com/trang-chu.html)
 Then follow the steps in `data_generator.ipynb`
@@ -33,6 +38,7 @@ Note: you may need to early stop the training process if the training-time test 
 ```
 python main.py
 ```
+Trained model [here](https://drive.google.com/drive/folders/1kQE0rg-y2YLHSYaiwMqdEYoxZvrOLy0B?usp=sharing)
 
 Convert
 
@@ -47,6 +53,16 @@ Demo
 ```
 cd demo_audio
 python server.py
+```
+
+API
+```
+python api.py
+```
+
+Post request sample
+```
+python post_request.py
 ```
 
 ## To-Do list
