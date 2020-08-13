@@ -67,7 +67,7 @@ python post_request.py
 ```
 
 ## To-Do list
-- [x] Post some converted samples (Please find some converted samples in the `converted_samples` folder).
+- [x] Post some converted samples (Please find some converted samples in the `demo_audio` folder).
 
 ## Papers that use this repo:
 1. [AUTOVC: Zero-Shot Voice Style Transfer with Only Autoencoder Loss (ICML2019)](https://arxiv.org/pdf/1905.05879v2.pdf)
