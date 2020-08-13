@@ -54,7 +54,7 @@ Demo
 cd demo_audio
 python server.py
 ```
-`103.137.4:3003`
+`103.137.4.6:3003`
 
 API
 ```
