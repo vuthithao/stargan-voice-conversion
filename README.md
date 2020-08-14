@@ -20,7 +20,7 @@ conda env create -f environment.yml
 
 Download and unzip [data and trained model](https://drive.google.com/drive/folders/1kQE0rg-y2YLHSYaiwMqdEYoxZvrOLy0B?usp=sharing) corpus to designated directories.
 
-If you want make your data (anyone you want), Download audiobook [here](http://sachnoiviet.com/trang-chu.html)
+If you want make your data (anyone you want), Download audiobook [here](http://sachnoiviet.com/trang-chu.html) or use [Spleeter](https://github.com/deezer/spleeter?fbclid=IwAR3Ht_2BbU-7ieQyo1YqOR3QenO0nJdn5Ue12GvT0yI52Hsk0vw1L0-hV-g) to colect singer's voice.
 Then follow the steps in `data_generator.ipynb`
 
 Preprocess data
